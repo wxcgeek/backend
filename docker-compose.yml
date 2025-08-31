@@ -27,7 +27,7 @@ services:
     container_name: mblog-backend
     restart: always
     volumes:
-      - mblog-backend-data:/opt/mblog/upload
+      - mblog-backend-data:/home/mblog/upload
     environment:
       MYSQL_USER: mblog
       MYSQL_PASS: FeZ3DVjdFMAdzJmu
