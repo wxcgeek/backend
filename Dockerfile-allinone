@@ -7,7 +7,7 @@ RUN apk add --no-cache git
 RUN corepack enable
 RUN git clone --depth=1 https://github.com/kingwrcy/mblog-front.git
 WORKDIR /app/mblog-front
-RUN yarn install --registry=https://registry.npm.taobao.org
+RUN yarn install
 RUN sed -i 's#REPLACE_VERSION_HERE#'"$VERSION"'#g' .env.all
 RUN yarn build-only --mode=all
 
