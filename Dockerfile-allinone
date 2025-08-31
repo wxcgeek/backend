@@ -12,7 +12,7 @@ RUN sed -i 's#REPLACE_VERSION_HERE#'"$VERSION"'#g' .env.all
 RUN yarn build-only --mode=all
 
 # 第二阶段：构建Java应用 - 使用官方Maven镜像
-FROM maven:3.8.6-openjdk-17-alpine AS builder
+FROM maven:3.8.6-openjdk-17 AS builder
 WORKDIR /build
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 COPY pom.xml .
